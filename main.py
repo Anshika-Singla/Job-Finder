@@ -85,7 +85,7 @@ def fetch_jobs_from_api(description, city, state, country, date_posted):
 
     url = "https://jsearch.p.rapidapi.com/search"
     headers = {
-        "X-RapidAPI-Key": "adfe7873femshb6429251118dd8fp157a59jsn90a0cfd2d346",
+        "X-RapidAPI-Key": "3b1d0a0bb0msh4ed01329a5a658bp1716fajsn0a75e869d489",
         "X-RapidAPI-Host": "jsearch.p.rapidapi.com"
     }
     querystring = {
