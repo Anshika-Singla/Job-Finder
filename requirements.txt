@@ -5,3 +5,4 @@ requests
 sentence-transformers
 scikit-learn
 keybert
+python-multipart
