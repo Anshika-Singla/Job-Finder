@@ -38,8 +38,17 @@ async def log_requests(request: Request, call_next):
     return response
 
 # ------------------ Models ------------------
-model = SentenceTransformer("all-MiniLM-L12-v2")
-kw_model = KeyBERT(model=model)
+model = None
+kw_model = None
+
+@app.on_event("startup")
+async def load_models():
+    global model, kw_model
+    from sentence_transformers import SentenceTransformer
+    from keybert import KeyBERT
+    model = SentenceTransformer("all-MiniLM-L6-v2")  # lighter model
+    kw_model = KeyBERT(model)
+
 
 custom_stopwords = {
     "know", "knowing", "knowledge", "familiar", "familiarity", "skilled", "skill",
